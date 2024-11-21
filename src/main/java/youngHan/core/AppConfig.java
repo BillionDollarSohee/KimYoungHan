@@ -1,6 +1,8 @@
 package youngHan.core;
 
+import youngHan.core.discount.DiscountPolicy;
 import youngHan.core.discount.FixDiscountPolicy;
+import youngHan.core.member.MemberRepository;
 import youngHan.core.member.MemberService;
 import youngHan.core.member.MemberServiceImpl;
 import youngHan.core.member.MemoryMemberRepository;
@@ -18,11 +20,11 @@ public class AppConfig {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
-    private static MemoryMemberRepository memberRepository() {
+    private static MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
-    private static FixDiscountPolicy discountPolicy() {
+    private static DiscountPolicy discountPolicy() {
         return new FixDiscountPolicy();
     }
 
