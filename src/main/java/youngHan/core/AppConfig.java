@@ -15,7 +15,9 @@ import youngHan.core.order.OrderServiceImpl;
 public class AppConfig {
 
     @Bean
-    public MemberService memberService() { return new MemberServiceImpl(memberRepository()); }
+    public MemberService memberService() {
+        return new MemberServiceImpl(memberRepository());
+    }
 
     @Bean
     public OrderService orderService() {
@@ -31,6 +33,5 @@ public class AppConfig {
     public static DiscountPolicy discountPolicy() {
         return new RateDiscountPolicy();
     }
-
 
 }
